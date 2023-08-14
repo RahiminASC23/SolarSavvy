@@ -10,9 +10,9 @@ html {
   }
   
   #top-bar {
-    background-color: #e4c83f;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background-color: #9fe7f5;
+    padding-top: 7px;
+    padding-bottom: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -33,7 +33,7 @@ html {
     text-decoration: underline;
   }
   
-  #mleb {
+  .wop {
     padding-left: 150px;
     padding-right: 150px;
     display: flex;
@@ -49,5 +49,6 @@ html {
   }
   
   #home img {
-    width: 120px;
+   height: 40px;
   }
+  
