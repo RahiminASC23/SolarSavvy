@@ -4,18 +4,24 @@ html {
   }
   
   body {
-    background-color: #f1f0eb;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0e1834;
+    color: #feffc2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0px;
+    font-style: bold;
   }
   
   #top-bar {
+    top: 0;
+    position: sticky;
     background-color: #9fe7f5;
     padding-top: 7px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: #1b094e solid 2px;
+    width: 100%;
   }
   
   .items {
@@ -24,11 +30,11 @@ html {
     border-radius: 25px;
     padding: 10px;
     font-size: 25px;
-    transition: all 0.3s;
+    transition: all 0.75s;
   }
   
   .items:hover {
-    background-color: #d79922;
+    background-color: #bfa87d;
     color: #efe1ba;
     text-decoration: underline;
   }
@@ -40,8 +46,14 @@ html {
     flex-flow: column wrap;
     justify-content: center;
     align-content: flex-start;
+    text-align: center;
     font-size: 25px;
-    color: #d79922;
+  }
+  
+  .benefit_img_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
   
   a {
@@ -49,6 +61,123 @@ html {
   }
   
   #home img {
-   height: 40px;
+    height: 40px;
   }
   
+  #abt_logo {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  .reason_1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .i1 {
+    padding-left: 20px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .r1 {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .push_right {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  
+  .push_left {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  
+  #map {
+    height: 100%;
+  }
+  
+  /* 
+   * Optional: Makes the sample page fill the window. 
+   */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+  
+  #infowindow-content {
+    display: none;
+  }
+  
+  #map #infowindow-content {
+    display: inline;
+  }
+  
+  .pac-card {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    font-family: Roboto;
+    padding: 0;
+  }
+  
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+  
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
+  
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+  
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+  
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+  
+  #target {
+    width: 345px;
+  }
