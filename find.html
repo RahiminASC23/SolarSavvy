@@ -4,11 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>find</title>
+  <title>Solar Panel Finder</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="config.json">
 </head>
-
 
 <body>
   <nav id="top-bar">
@@ -29,29 +28,17 @@
     </a>
   </nav>
 
+  <!-- Zipcode Input Form -->
+  <h1>Find the perfect solar panel provider for you</h1>
+
+  <form id="zipcode-form">
+    <input type="text" id="zipcode-input" placeholder="Enter US Zipcode" />
+    <button type="submit">Search</button>
+  </form>
+  
+  <div id="results"></div>
 
   <script src="script.js"></script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-  <script type="module" src="./index.js"></script>
-  </head>
-
-  <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
-    <div id="map"></div>
-
-    <!-- 
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initAutocomplete&libraries=places&v=weekly"
-      defer></script>
-  </body>
-
+</body>
 
 </html>
