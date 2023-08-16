@@ -21,7 +21,6 @@ let zipcodeinput = document.getElementById("zipcode-input");
 
 submit.onclick = function(event) {
   event.preventDefault();
-
       results1.textContent = "1st Light Energy";
       address1.textContent = "106-55 150th St, South Jamaica, NY 11435";
       phone1.textContent = "(866) 837-6527";
