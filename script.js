@@ -22,9 +22,15 @@ let zipcodeinput = document.getElementById("zipcode-input");
 submit.onclick = function(event) {
   event.preventDefault();
 
-      results.textContent = "1st Light Energy";
-      address.textContent = "106-55 150th St, South Jamaica, NY 11435";
-      phone.textContent = "(866) 837-6527";
+      results1.textContent = "1st Light Energy";
+      address1.textContent = "106-55 150th St, South Jamaica, NY 11435";
+      phone1.textContent = "(866) 837-6527";
+      results2.textContent = "internationalenergy";
+      address2.textContent = "11414 Sutphin Blvd, Queens, NY 11434";
+      phone2.textContent = "(516) 584-3312";
+      results3.textContent = "S&R Solar Design";
+      address3.textContent = "124-15 Metropolitan Ave 2nd floor, Queens, NY 11415";
+      phone3.textContent = "(516) 884-2208";
 }
 
 /*
