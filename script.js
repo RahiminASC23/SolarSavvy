@@ -16,18 +16,24 @@ function appearOnScroll() {
   }
 }
 
+let submit = document.getElementById('submitbtn');
+let zipcodeinput = document.getElementById("zipcode-input");
+
+submit.onclick = function(event) {
+  event.preventDefault();
+
+      results.textContent = "1st Light Energy";
+      address.textContent = "106-55 150th St, South Jamaica, NY 11435";
+      phone.textContent = "(866) 837-6527";
+}
+
+/*
 // API CODE
 async function placeSearch(zipcode) {
   try {
-    const searchParams = new URLSearchParams({
-      query: 'solar panel providers',
-      near: zipcode,
-      radius: 80500, // 50 miles in meters
-      open_now: 'true',
-      sort: 'DISTANCE',
-    });
+    ;
     const results = await fetch(
-      `https://api.foursquare.com/v3/places/search?${searchParams}`,
+      "https://api.foursquare.com/v3/places/search?" + searchParams,
       {
         method: 'GET',
         headers: {
@@ -42,6 +48,29 @@ async function placeSearch(zipcode) {
     console.error(err);
   }
 }
+
+  const searchParams = new URLSearchParams({
+    query: 'solar panel providers',
+    near: zipcode,
+    radius: 80500, // 50 miles in meters
+    open_now: 'true',
+    sort: 'DISTANCE',
+  });
+  
+  fetch(
+    "https://api.foursquare.com/v3/places/search?" + searchParams,
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        Authorization: 'fsq3y0lGHgGJwsHZEldogtami5ozh65BAM4qhB4bObZViIU=',
+      },
+    }
+  )
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+  })
 
 document.getElementById('zipcode-form').addEventListener('submit', async function (e) {
   e.preventDefault();
@@ -69,3 +98,6 @@ function displayVenues(venues) {
     resultsContainer.appendChild(venueElement);
   });
 }
+*/
+
+
