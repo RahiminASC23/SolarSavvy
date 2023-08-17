@@ -114,6 +114,8 @@ p {
 }
 
 .i1 {
+  margin: 20px;
+  padding: 0px;
   transition: all 0.5s ease-in-out;
   border-radius: 25px;
   border: 4px solid #d79922;
