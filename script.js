@@ -86,7 +86,7 @@ let solar = {
         'address': '1420 Washington Ave, Bronx, NY 10456',
         'phone' : '(718) 588-3797',
         'zip' : 10456 },
-    { 'name': 'x',
+    { 'name': 'OnForce Solar',
         'address': '728 E 136th St #305, Bronx, NY 10454',
         'phone' : '(347) 590-5450',
         'zip' : 10454 },
