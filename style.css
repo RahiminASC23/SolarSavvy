@@ -117,14 +117,17 @@ p {
   padding-left: 20px;
   transition: all 0.5s ease-in-out;
   border-radius: 25px;
+  border: 4px solid #d79922;
 }
 
 .i2 {
   border-radius: 25px;
+  border: 4px solid #d79922;
 }
 
 .i3 {
   border-radius: 25px;
+  border: 4px solid #d79922;
 }
 
 .r1 {
