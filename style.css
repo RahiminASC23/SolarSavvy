@@ -23,6 +23,7 @@ body {
   align-items: center;
   border-bottom: #1b094e solid 2px;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .items {
