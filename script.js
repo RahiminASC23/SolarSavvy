@@ -85,20 +85,24 @@ function returnText() {
     let companyIndex = difference_array[i].index;
     let company = solar.companies[companyIndex];
 
+    let companyBox = document.createElement('div'); 
+    companyBox.classList.add('company-box'); 
+    outputDiv.appendChild(companyBox);
+
     let closestParagraph = document.createElement('p');
     closestParagraph.innerHTML = '#' + (i + 1);
-    outputDiv.appendChild(closestParagraph);
+    companyBox.appendChild(closestParagraph);
 
     let nameParagraph = document.createElement('p');
     nameParagraph.innerHTML = 'Name: ' + company.name;
-    outputDiv.appendChild(nameParagraph);
+    companyBox.appendChild(nameParagraph);
 
     let addressParagraph = document.createElement('p');
     addressParagraph.innerHTML = 'Address: ' + company.address;
-    outputDiv.appendChild(addressParagraph);
+    companyBox.appendChild(addressParagraph);
 
     let phoneParagraph = document.createElement('p');
     phoneParagraph.innerHTML = 'Phone: ' + company.phone;
-    outputDiv.appendChild(phoneParagraph);
+    companyBox.appendChild(phoneParagraph);
   }
 }
