@@ -150,8 +150,10 @@ function returnText() {
     companyBox.appendChild(closestParagraph);
 
     let nameParagraph = document.createElement('p');
-    nameParagraph.innerHTML = 'Name: ' + company.name;
+    nameParagraph.innerHTML = company.name;
     companyBox.appendChild(nameParagraph);
+    nameParagraph.style.fontSize = '20px';
+    nameParagraph.style.fontWeight = '900';
 
     let addressParagraph = document.createElement('p');
     addressParagraph.innerHTML = 'Address: ' + company.address;
