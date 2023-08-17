@@ -16,93 +16,89 @@ function appearOnScroll() {
   }
 }
 
-let submit = document.getElementById('submitbtn');
-let zipcodeinput = document.getElementById("zipcode-input");
-
-submit.onclick = function(event) {
-  event.preventDefault();
-      results1.textContent = "1st Light Energy";
-      address1.textContent = "106-55 150th St, South Jamaica, NY 11435";
-      phone1.textContent = "(866) 837-6527";
-      results2.textContent = "internationalenergy";
-      address2.textContent = "11414 Sutphin Blvd, Queens, NY 11434";
-      phone2.textContent = "(516) 584-3312";
-      results3.textContent = "S&R Solar Design";
-      address3.textContent = "124-15 Metropolitan Ave 2nd floor, Queens, NY 11415";
-      phone3.textContent = "(516) 884-2208";
+let solar = {
+  "companies": [
+      { 'name': 'Accord Power Inc',
+        'address': '130-30 31st Ave #707, College Point, NY 11354',
+        'phone' : '(718) 321-8820',
+        'zip' : 11354 },
+      { 'name': '1st Light Energy',
+        'address': '106-55 150th St, South Jamaica, NY 11435',
+        'phone' : '(866) 837-6527',
+        'zip' : 11435 },
+      { 'name': 'internationalenergy',
+        'address': '11414 Sutphin Blvd, Queens, NY 11434',
+        'phone' : '(516) 584-3312',
+        'zip' : 11434 },
+      { 'name': 'S&R Solar Design',
+        'address': '124-15 Metropolitan Ave 2nd floor, Queens, NY 11415',
+        'phone' : '(516) 884-2208',
+        'zip' : 11415 },
+      { 'name': 'YSG Solar' ,
+        'address': '79 Madison Ave f8, New York, NY 10016',
+        'phone' : '(212) 389-9215',
+        'zip' : 10016 },
+      { 'name': 'New York Solar Installers, Inc',
+        'address': '123 E 129th St Unit 7N, New York, NY 10035',
+        'phone' : '(646) 921-4447',
+        'zip' : 10035 },
+      { 'name': 'Brooklyn SolarWorks',
+        'address': '200 6th St Suite 3G, Brooklyn, NY 11215',
+        'phone' : '(347) 429-7290',
+        'zip' : 11215 },
+      { 'name': 'Venture Solar',
+        'address': '42 West St, Brooklyn, NY 11222',
+        'phone' : '(800) 203-4158',
+        'zip' : 11222 },
+      { 'name': 'Best Energy Power',
+        'address': '20 W Fairview Ave, Valley Stream, NY 11580',
+        'phone' : '(212) 730-2267',
+        'zip' : 11580 },
+      { 'name': 'EmPower Solar',
+        'address': '4589 Austin Blvd, Island Park, NY 11558',
+        'phone' : '(516) 837-3459',
+        'zip' : 11558 },
+      { 'name': 'Built Well Solar',
+        'address': '2473 Jerusalem Ave, North Bellmore, NY 11710',
+        'phone' : '(516) 695-1000',
+        'zip' : 11710 },
+  ]
 }
 
-/*
-// API CODE
-async function placeSearch(zipcode) {
-  try {
-    ;
-    const results = await fetch(
-      "https://api.foursquare.com/v3/places/search?" + searchParams,
-      {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          Authorization: 'fsq3y0lGHgGJwsHZEldogtami5ozh65BAM4qhB4bObZViIU=',
-        },
-      }
-    );
-    const data = await results.json();
-    return data;
-  } catch (err) {
-    console.error(err);
+function returnText() {
+  let zip_input = parseInt(document.getElementById('zip_input').value);
+
+  let zip_array = [];
+  let difference_array = [];
+
+  for (let i = 0; i < solar.companies.length; i++) {
+    zip_array.push(solar.companies[i].zip);
+    difference_array.push({ index: i, difference: Math.abs(zip_array[i] - zip_input) });
+  }
+
+  let outputDiv = document.querySelector('.output');
+  outputDiv.innerHTML = '';
+
+  difference_array.sort(function(a, b) { return a.difference - b.difference; });
+
+  for (let i = 0; i < 3; i++) {
+    let companyIndex = difference_array[i].index;
+    let company = solar.companies[companyIndex];
+
+    let closestParagraph = document.createElement('p');
+    closestParagraph.innerHTML = '#' + (i + 1);
+    outputDiv.appendChild(closestParagraph);
+
+    let nameParagraph = document.createElement('p');
+    nameParagraph.innerHTML = 'Name: ' + company.name;
+    outputDiv.appendChild(nameParagraph);
+
+    let addressParagraph = document.createElement('p');
+    addressParagraph.innerHTML = 'Address: ' + company.address;
+    outputDiv.appendChild(addressParagraph);
+
+    let phoneParagraph = document.createElement('p');
+    phoneParagraph.innerHTML = 'Phone: ' + company.phone;
+    outputDiv.appendChild(phoneParagraph);
   }
 }
-
-  const searchParams = new URLSearchParams({
-    query: 'solar panel providers',
-    near: zipcode,
-    radius: 80500, // 50 miles in meters
-    open_now: 'true',
-    sort: 'DISTANCE',
-  });
-  
-  fetch(
-    "https://api.foursquare.com/v3/places/search?" + searchParams,
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'fsq3y0lGHgGJwsHZEldogtami5ozh65BAM4qhB4bObZViIU=',
-      },
-    }
-  )
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data)
-  })
-
-document.getElementById('zipcode-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
-
-  const zipcode = document.getElementById('zipcode-input').value;
-  const data = await placeSearch(zipcode);
-
-  const venues = data.response.venues;
-  displayVenues(venues);
-});
-
-function displayVenues(venues) {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = ''; 
-
-  venues.forEach((venue) => {
-    const name = venue.name;
-    const address = venue.location.address || 'Address not available';
-    const phone = venue.contact.phone || 'Phone number not available';
-
-    const venueElement = document.createElement('div');
-    venueElement.className = 'venue'; 
-    venueElement.innerHTML = `<h3>${name}</h3><p>${address}</p><p>${phone}</p>`;
-
-    resultsContainer.appendChild(venueElement);
-  });
-}
-*/
-
-

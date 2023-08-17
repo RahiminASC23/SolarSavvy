@@ -31,24 +31,16 @@
   <!-- Zipcode Input Form -->
   <h1>Find the perfect solar panel provider for you</h1>
 
-  <form id="zipcode-form">
-    <input type="text" id="zipcode-input" placeholder="Enter US Zipcode" />
-    <button id="submitbtn">Search</button>
+  <div id="enter">
+  <form>
+    <label> Enter your zipcode:</label>
+    <input type="number" id="zip_input" placeholder="5 digit zipcode">
   </form>
-  
-  <div id="container">
-    <p id="results1"></p>
-    <p id="address1"></p>
-    <p id="phone1"></p>
-    <br>
-    <p id="results2"></p>
-    <p id="address2"></p>
-    <p id="phone2"></p>
-    <br>
-    <p id="results3"></p>
-    <p id="address3"></p>
-    <p id="phone3"></p>
+  <button id="submit" onclick="returnText()">Submit</button>
+  </div>
 
+  <div class="output">
+    <p></p>
   </div>
 
   <script src="script.js"></script>
