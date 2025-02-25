@@ -23,10 +23,10 @@ body {
   padding-top: 7px;
   padding-bottom: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: #1b094e solid 2px;
-  width: 100%;
+  width: 100vw;
   margin-bottom: 20px;
 }
 
@@ -38,7 +38,9 @@ body {
   background-color: #e4c83f;
   color: #0b0c0f;
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-size: 25px;
   transition: all 0.75s;
 }
@@ -235,6 +237,7 @@ p {
 #head {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 40px;
 }
 
